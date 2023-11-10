@@ -1,0 +1,18 @@
+name: build-image
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+    runs-on: leno
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build the Docker image
+      run: |
+        cd self-hosted-runner
+        docker build . --network host --tag self-hosted-runner
