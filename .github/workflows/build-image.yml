@@ -14,4 +14,4 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build the Docker image
       run: |
-        docker build /home/docker/actions-runner/_work/self-hosted-runner --network host --tag self-hosted-runner --file Dockerfile
+        docker build --no-cache /home/docker/actions-runner/_work/self-hosted-runner --network host --tag self-hosted-runner --file Dockerfile
