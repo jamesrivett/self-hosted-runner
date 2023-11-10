@@ -16,6 +16,8 @@ RUN mkdir /home/docker/actions-runner && cd /home/docker/actions-runner \
 
 RUN chown -R docker ~docker && /home/docker/actions-runner/bin/installdependencies.sh
 
+RUN usermod -aG docker docker
+
 COPY entrypoint.sh entrypoint.sh
 RUN chmod +x entrypoint.sh
 
